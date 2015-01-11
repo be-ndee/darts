@@ -47,46 +47,41 @@ def register(request):
     if not request.POST or request.user.is_authenticated():
         context = RequestContext(request, {})
         return HttpResponse(template.render(context))
+    
+    # create error array
+    errors = {}
     # check if user exists
     username = request.POST['username']
     try:
         user = User.objects.get(username=username)
-        context = RequestContext(request, {
-            'errors': [
-                _('The username already exists.')
-            ]
-        })
-        return HttpResponse(template.render(context))
+        errors['username'] = _('The username already exists.')
     except ObjectDoesNotExist:
         user = User()
+
     # validate username
     USERNAME_REGEX = re.compile(r'^[a-zA-Z0-9_@+.-]{4,30}$')
     if not USERNAME_REGEX.match(username):
-        context = RequestContext(request, {
-            'errors': [
-                _('The username is not correct.')
-            ]
-        })
-        return HttpResponse(template.render(context))
+        errors['username'] = _('The username is not correct.')
+
+    # validate email
+    email = request.POST['email']
+    EMAIL_REGEX = re.compile(r'[^@]+@[^@]+\.[^@]')
+    if not EMAIL_REGEX.match(email):
+        errors['email'] = _('The email is not valid.')
+
     # validate password
     password = request.POST['password']
     password_repeat = request.POST['password_repeat']
     PASSWORD_REGEX = re.compile(r'^[a-zA-Z0-9_@+.-]{4,30}$')
     if password != password_repeat or not PASSWORD_REGEX.match(password):
+        errors['password'] = _('The passwords do not match.')
+    
+    # if errors created, return them
+    if len(errors) > 0:
         context = RequestContext(request, {
-            'errors': [
-                _('The passwords do not match.')
-            ]
-        })
-        return HttpResponse(template.render(context))
-    # validate email
-    email = request.POST['email']
-    EMAIL_REGEX = re.compile(r'[^@]+@[^@]+\.[^@]')
-    if not EMAIL_REGEX.match(email):
-        context = RequestContext(request, {
-            'errors': [
-                _('The email is not valid.')
-            ]
+            'errors': errors,
+            'email': email,
+            'username': username,
         })
         return HttpResponse(template.render(context))
     # save data
