@@ -6,3 +6,9 @@ watch:
 
 bower:
 	python3 darts/manage.py bower install
+
+lang_make:
+	python3 darts/manage.py makemessages -a
+
+lang_compile:
+	python3 darts/manage.py compilemessages
