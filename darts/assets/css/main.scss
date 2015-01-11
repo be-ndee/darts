@@ -1,0 +1,24 @@
+$footer-height: 60px;
+$footer-font-size: 14px;
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	margin-bottom: $footer-height;
+}
+
+footer.footer {
+	position: absolute;
+	bottom: 0;
+	background-color: #f8f8f8;
+	border-top: 1px solid #e7e7e7;
+	color: #777777;
+	height: $footer-height;
+	width: 100%;
+	padding: (($footer-height - $footer-font-size) / 2) 20px;
+	font-size: $footer-font-size;
+	line-height: $footer-font-size;
+}
