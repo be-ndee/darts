@@ -3,5 +3,23 @@
 {% load i18n %}
 {% block title %} - {% trans 'Basic Scoring' %}{% endblock %}
 {% block content %}
-	BASIC SCORING
+	<form method="post" action="{% url 'score:add_points' %}">
+		{% csrf_token %}
+		<input type="hidden" name="next" value="score:basic_scoring" />
+		<div class="row">
+			<div class="form-group col-xs-4 col-sm-2">
+				<label for="points_input">{% trans 'Points' %}</label>
+				<input type="number" id="points_input" class="form-control" name="points" placeholder="89" />
+			</div>
+			<div class="form-group col-xs-4 col-sm-2">
+				<label for="darts_amount_input">{% trans 'Darts thrown' %}</label>
+				<input type="number" id="darts_amount_input" class="form-control" name="darts_amount" placeholder="3" />
+			</div>
+		</div>
+		<button type="submit" class="btn btn-default">{% trans 'Save points' %}</button>
+	</form>
+	<br/><br/>
+	{% for score in scores %}
+		{{ score.throw.points }} ({{ score.throw.darts_amount }})<br/>
+	{% endfor %}
 {% endblock %}

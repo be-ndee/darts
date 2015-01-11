@@ -3,5 +3,7 @@
 {% load i18n %}
 {% block title %} - {% trans 'Score' %}{% endblock %}
 {% block content %}
-	SCORE INDEX
+	{% trans 'Total score' %}: <b>{{ player.total_score }}</b><br/>
+	{% trans 'Total darts thrown' %}: <b>{{ player.total_darts_amount }}</b><br/>
+	{% trans 'Total average' %}: <b>{{ player.get_average|floatformat:2 }}</b><br/>
 {% endblock %}

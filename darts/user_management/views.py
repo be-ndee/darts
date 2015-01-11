@@ -12,6 +12,8 @@ from django.core.mail import send_mail
 from django.core.exceptions import ObjectDoesNotExist
 from django.utils.translation import ugettext_lazy as _
 
+from user_management.models import PlayerProfile
+
 from common import utils
 import re
 
@@ -90,6 +92,10 @@ def register(request):
     user.email = email
     # TODO email user
     user.save()
+    # create profile
+    profile = PlayerProfile()
+    profile.user = user
+    profile.save()
 
     template = loader.get_template('user_management/register_success.html')
     context = RequestContext(request, {
