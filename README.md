@@ -22,6 +22,14 @@ Install django-bower components
 
 	$ make bower
 
+Make the language-/messagefiles
+
+	$ make lang_make
+
+Compile the language-/messagefiles
+
+	$ make lang_compile
+
 ## License
 
 See [LICENSE](LICENSE).
