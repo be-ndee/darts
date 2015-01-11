@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %} - {% trans 'Show profile' %}{% endblock %}
+{% block content %}
+	{{ player.user.username }}
+	{% for score in scores %}
+		{{ score.throw.points }} ({{ score.throw.darts_amount }})<br/>
+	{% endfor %}
+{% endblock %}

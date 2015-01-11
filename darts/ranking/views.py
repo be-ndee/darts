@@ -4,6 +4,8 @@ from django.template import RequestContext, loader
 from django.contrib.auth.decorators import login_required
 
 from user_management.models import PlayerProfile
+from score.models import Score, Throw
+from django.contrib.auth.models import User
 
 from django.utils.translation import ugettext_lazy as _
 
@@ -28,3 +30,18 @@ def index(request):
 	})
 	return HttpResponse(template.render(context))
 
+
+@login_required
+def show_profile(request, username):
+	try:
+		user = User.objects.get(username=username)
+		player = PlayerProfile.objects.get(user=user)
+		scores = Score.objects.filter(player=player)
+	except Exception:
+		return redirect('ranking:index')
+	template = loader.get_template('ranking/show_profile.html')
+	context = RequestContext(request, {
+		'player': player,
+		'scores': scores,
+	})
+	return HttpResponse(template.render(context))
