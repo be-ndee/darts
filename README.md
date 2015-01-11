@@ -30,6 +30,14 @@ Compile the language-/messagefiles
 
 	$ make lang_compile
 
+## About the project
+
+### Apps
+
+home: contains only the welcome and help pages
+user_management: registrate, login and logout users
+score: score points in single mode, that means input your thrown points
+
 ## License
 
 See [LICENSE](LICENSE).
