@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'home',
     'user_management',
     'score',
+    'ranking',
 )
 
 MIDDLEWARE_CLASSES = (
