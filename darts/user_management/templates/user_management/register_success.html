@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %} - {% trans 'Successfully registered' %}{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="alert alert-success" role="alert">
+            {% trans 'Thank you' %} {{ username }} {% trans 'for register!' %} {% trans 'Please confirm the link, which is sent to you via email.' %}
+            {% trans 'Then we can finish the registration and you can start playing darts!' %}
+        </div>
+    </div>
+{% endblock %}

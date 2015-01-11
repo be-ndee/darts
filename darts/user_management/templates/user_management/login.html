@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %} - {% trans 'Login' %}{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-xs-1 col-sm-3 col-md-4"></div>
+        <div class="col-xs-10 col-sm-6 col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    {% trans 'Please login' %}
+                </div>
+                <form class="panel-body" role="login" method="post" action="{% url 'user:login' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="home:welcome" />
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="{% trans 'Username' %}" name="username">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="{% trans 'Password' %}" name="password">
+                    </div>
+                    <button type="submit" class="btn btn-default">{% trans 'Login' %}</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-xs-1 col-sm-3 col-md-4"></div>
+    </div>
+{% endblock %}

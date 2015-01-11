@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'djangobower',
     'home',
+    'user_management',
 )
 
 MIDDLEWARE_CLASSES = (
