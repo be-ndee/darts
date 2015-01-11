@@ -58,6 +58,7 @@ bower_components
 
 # Database
 db.sqlite3
+migrations
 
 # Sass
 .sass-cache
