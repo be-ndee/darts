@@ -37,6 +37,7 @@ Compile the language-/messagefiles
 home: contains only the welcome and help pages
 user_management: registrate, login and logout users
 score: score points in single mode, that means input your thrown points
+ranking: show rankings
 
 ## License
 

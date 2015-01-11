@@ -3,5 +3,38 @@
 {% load i18n %}
 {% block title %} - {% trans 'Ranking' %}{% endblock %}
 {% block content %}
-	RANKING
+	<table class="table">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>{% trans 'Player' %}</th>
+				<th>
+					<a href="{% url 'ranking:index' %}?sort_by=total_score&order=DESC" class="glyphicon glyphicon-chevron-down" title="{% trans 'Descending total score' %}"></a>
+					<a href="{% url 'ranking:index' %}?sort_by=total_score&order=ASC" class="glyphicon glyphicon-chevron-up" title="{% trans 'Ascending total score' %}"></a>
+					{% trans 'Total score' %}
+				</th>
+				<th>
+					<a href="{% url 'ranking:index' %}?sort_by=total_score&order=DESC" class="glyphicon glyphicon-chevron-down" title="{% trans 'Descending total thrown darts' %}"></a>
+					<a href="{% url 'ranking:index' %}?sort_by=total_score&order=ASC" class="glyphicon glyphicon-chevron-up" title="{% trans 'Ascending total thrown darts' %}"></a>
+					{% trans 'Total darts amount' %}
+				</th>
+				<th>
+					<a href="{% url 'ranking:index' %}?sort_by=total_score&order=DESC" class="glyphicon glyphicon-chevron-down" title="{% trans 'Descending total average' %}"></a>
+					<a href="{% url 'ranking:index' %}?sort_by=total_score&order=ASC" class="glyphicon glyphicon-chevron-up" title="{% trans 'Ascending total average' %}"></a>
+					{% trans 'Total average' %}
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for player in ranking %}
+				<tr>
+					<td>{{ forloop.counter }}</td>
+					<td>{{ player.user.username }}</td>
+					<td>{{ player.total_score }}</td>
+					<td>{{ player.total_darts_amount }}</td>
+					<td>{{ player.total_average }}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
 {% endblock %}
