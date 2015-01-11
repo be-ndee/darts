@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %} - {% trans 'Welcome' %}{% endblock %}
+{% block content %}
+	<div class="jumbotron">
+		<h1>{% trans 'Welcome to darts' %}</h1>
+		<p>{% trans 'Hello everyone to this app.' %}</p>
+		<p><a class="btn btn-primary btn-lg" href="{% url 'home:help' %}" role="button">{% trans 'Learn more' %}</a></p>
+	</div>
+{% endblock %}
