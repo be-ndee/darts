@@ -58,3 +58,8 @@ bower_components
 
 # Database
 db.sqlite3
+
+# Sass
+.sass-cache
+*.min.css
+*.min.css.map
