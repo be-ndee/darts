@@ -9,4 +9,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('home.urls', namespace='home')),
     url(r'^user/', include('user_management.urls', namespace='user')),
+    url(r'^score/', include('score.urls', namespace='score')),
 )

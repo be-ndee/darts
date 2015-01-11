@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'djangobower',
     'home',
     'user_management',
+    'score',
 )
 
 MIDDLEWARE_CLASSES = (
