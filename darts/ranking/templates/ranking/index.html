@@ -32,7 +32,7 @@
 					<td><a href="{% url 'ranking:show_profile' username=player.user.username %}">{{ player.user.username }}</a></td>
 					<td>{{ player.total_score }}</td>
 					<td>{{ player.total_darts_amount }}</td>
-					<td>{{ player.total_average }}</td>
+					<td>{{ player.total_average|floatformat:2 }}</td>
 				</tr>
 			{% endfor %}
 		</tbody>

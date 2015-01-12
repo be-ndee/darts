@@ -6,7 +6,7 @@ class PlayerProfile(models.Model):
 	user = models.ForeignKey(User, unique=True)
 	total_score = models.PositiveIntegerField(default=0, null=False)
 	total_darts_amount = models.PositiveIntegerField(default=0, null=False)
-	total_average = models.PositiveIntegerField(default=0, null=False)
+	total_average = models.FloatField(default=0, null=False)
 
 	def save(self):
 		self.total_average = self.get_average()
