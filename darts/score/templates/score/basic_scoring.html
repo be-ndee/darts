@@ -18,7 +18,34 @@
 		</div>
 		<button type="submit" class="btn btn-default">{% trans 'Save points' %}</button>
 	</form>
-	<br/><br/>
+	<br/>
+	<div id="score_window">0</div>
+	<br/>
+	<div class="point_calculator">
+		<div class="points_field">
+			<div class="field_row">
+				<button class="point_input_btn point_number" data-value="1">1</button>
+				<button class="point_input_btn point_number" data-value="2">2</button>
+				<button class="point_input_btn point_number" data-value="3">3</button>
+			</div>
+			<div class="field_row">
+				<button class="point_input_btn point_number" data-value="4">4</button>
+				<button class="point_input_btn point_number" data-value="5">5</button>
+				<button class="point_input_btn point_number" data-value="6">6</button>
+			</div>
+			<div class="field_row">
+				<button class="point_input_btn point_number" data-value="7">7</button>
+				<button class="point_input_btn point_number" data-value="8">8</button>
+				<button class="point_input_btn point_number" data-value="9">9</button>
+			</div>
+			<div class="field_row">
+				<button class="point_input_btn point_clear">C</button>
+				<button class="point_input_btn point_number" data-value="0">0</button>
+				<button class="point_input_btn point_ok">OK</button>
+			</div>
+		</div>
+	</div>
+	<br/><br/><br/>
 	{% for score in scores %}
 		{{ score.throw.points }} ({{ score.throw.darts_amount }})<br/>
 	{% endfor %}
