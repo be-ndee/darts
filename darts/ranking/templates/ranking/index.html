@@ -14,14 +14,19 @@
 					{% trans 'Total score' %}
 				</th>
 				<th>
-					<a href="{% url 'ranking:index' %}?sort_by=total_score&order=DESC" class="glyphicon glyphicon-chevron-down" title="{% trans 'Descending total thrown darts' %}"></a>
-					<a href="{% url 'ranking:index' %}?sort_by=total_score&order=ASC" class="glyphicon glyphicon-chevron-up" title="{% trans 'Ascending total thrown darts' %}"></a>
+					<a href="{% url 'ranking:index' %}?sort_by=total_darts_amount&order=DESC" class="glyphicon glyphicon-chevron-down" title="{% trans 'Descending total thrown darts' %}"></a>
+					<a href="{% url 'ranking:index' %}?sort_by=total_darts_amount&order=ASC" class="glyphicon glyphicon-chevron-up" title="{% trans 'Ascending total thrown darts' %}"></a>
 					{% trans 'Total darts amount' %}
 				</th>
 				<th>
-					<a href="{% url 'ranking:index' %}?sort_by=total_score&order=DESC" class="glyphicon glyphicon-chevron-down" title="{% trans 'Descending total average' %}"></a>
-					<a href="{% url 'ranking:index' %}?sort_by=total_score&order=ASC" class="glyphicon glyphicon-chevron-up" title="{% trans 'Ascending total average' %}"></a>
-					{% trans 'Total average' %}
+					<a href="{% url 'ranking:index' %}?sort_by=one_dart_average&order=DESC" class="glyphicon glyphicon-chevron-down" title="{% trans 'Descending one dart average' %}"></a>
+					<a href="{% url 'ranking:index' %}?sort_by=one_dart_average&order=ASC" class="glyphicon glyphicon-chevron-up" title="{% trans 'Ascending one dart average' %}"></a>
+					{% trans 'Average per 1 dart' %}
+				</th>
+				<th>
+					<a href="{% url 'ranking:index' %}?sort_by=three_darts_average&order=DESC" class="glyphicon glyphicon-chevron-down" title="{% trans 'Descending three darts average' %}"></a>
+					<a href="{% url 'ranking:index' %}?sort_by=three_darts_average&order=ASC" class="glyphicon glyphicon-chevron-up" title="{% trans 'Ascending three darts average' %}"></a>
+					{% trans 'Average per 3 darts' %}
 				</th>
 			</tr>
 		</thead>
@@ -32,7 +37,8 @@
 					<td><a href="{% url 'ranking:show_profile' username=player.user.username %}">{{ player.user.username }}</a></td>
 					<td>{{ player.total_score }}</td>
 					<td>{{ player.total_darts_amount }}</td>
-					<td>{{ player.total_average|floatformat:2 }}</td>
+					<td>{{ player.one_dart_average|floatformat:2 }}</td>
+					<td>{{ player.three_darts_average|floatformat:2 }}</td>
 				</tr>
 			{% endfor %}
 		</tbody>

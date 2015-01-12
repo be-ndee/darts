@@ -5,5 +5,6 @@
 {% block content %}
 	{% trans 'Total score' %}: <b>{{ player.total_score }}</b><br/>
 	{% trans 'Total darts thrown' %}: <b>{{ player.total_darts_amount }}</b><br/>
-	{% trans 'Total average' %}: <b>{{ player.get_average|floatformat:2 }}</b><br/>
+	{% trans 'One dart average' %}: <b>{{ player.get_one_dart_average|floatformat:2 }}</b><br/>
+	{% trans 'Three dart average' %}: <b>{{ player.get_one_dart_average|floatformat:2 }}</b><br/>
 {% endblock %}

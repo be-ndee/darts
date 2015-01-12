@@ -1,13 +1,13 @@
 $(document).ready(function (event) {
 	var dart_score = new DartScore();
-	dart_score.okScore();
+
 	$('div.point_calculator button.point_input_btn.point_number').on('click', function (event) {
 		dart_score.scoreInput($(event.target).attr('data-value'));
 	});
 	$('div.point_calculator button.point_input_btn.point_clear').on('click', function (event) {
 		dart_score.clearScore();
 	});
-	$('div.point_calculator button.point_input_btn.point_ok').on('click', function (event) {
+	$('button.point_ok').on('click', function (event) {
 		dart_score.okScore();
 	});
 });
@@ -30,5 +30,6 @@ function DartScore () {
 	};
 	this.okScore = function () {
 		$('#' + point_input_id).val(parseInt(score));
+		$('#' + point_input_id).text(parseInt(score));
 	};
 }
