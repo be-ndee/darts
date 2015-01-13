@@ -15,7 +15,7 @@ $(document).ready(function (event) {
 function DartScore () {
 	var score_window_id = 'score_window';
 	var point_input_id = 'points_input';
-	var score = '0';
+	var score = null;
 	this.scoreInput = function (number) {
 		if (score.length >= 3 || parseInt(score) == 0) {
 			score = number;
@@ -29,7 +29,9 @@ function DartScore () {
 		$('#' + score_window_id).html(score);
 	};
 	this.okScore = function () {
-		$('#' + point_input_id).val(parseInt(score));
-		$('#' + point_input_id).text(parseInt(score));
+		if (score != null) {
+			$('#' + point_input_id).val(parseInt(score));
+			$('#' + point_input_id).text(parseInt(score));
+		}
 	};
 }

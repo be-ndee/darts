@@ -49,19 +49,5 @@ def add_points(request):
 		darts_amount = int(request.POST['darts_amount'])
 		if not points >= 0 or not darts_amount > 1:
 			return redirect(utils.get_next_page(request))
-		try:
-			throw = Throw.objects.get(points=points, darts_amount=darts_amount)
-		except ObjectDoesNotExist:
-			throw = Throw()
-			throw.points = points
-			throw.darts_amount = darts_amount
-			throw.save()
-		score = Score()
-		score.throw = throw
-		score.player = player_profile
-		score.save()
-		player_profile.total_score += points
-		player_profile.total_darts_amount += darts_amount
-		player_profile.save()
-		
+		player_profile.throw_darts(points, darts_amount)
 	return redirect(utils.get_next_page(request))

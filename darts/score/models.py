@@ -1,5 +1,5 @@
 from django.db import models
-from user_management.models import PlayerProfile
+import user_management
 
 # Create your models here.
 class Throw(models.Model):
@@ -8,6 +8,6 @@ class Throw(models.Model):
 
 
 class Score(models.Model):
-	player = models.ForeignKey(PlayerProfile)
+	player = models.ForeignKey(user_management.models.PlayerProfile)
 	throw = models.ForeignKey(Throw)
 	date = models.DateTimeField(auto_now_add=True)
