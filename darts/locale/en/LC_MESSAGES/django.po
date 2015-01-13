@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-11 11:04+0000\n"
+"POT-Creation-Date: 2015-01-13 11:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,62 +17,243 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: darts/darts/settings.py:80
+#: darts/settings.py:83
 msgid "English"
 msgstr ""
 
-#: darts/darts/settings.py:81
+#: darts/settings.py:84
 msgid "German"
 msgstr ""
 
-#: darts/home/templates/home/help.html:4 darts/templates/index.html:35
+#: home/templates/home/help.html:4 templates/index.html:35
 msgid "Help"
 msgstr ""
 
-#: darts/home/templates/home/welcome.html:4 darts/templates/index.html:34
+#: home/templates/home/help.html:6
+msgid "Score -> Score: Your own total scores"
+msgstr ""
+
+#: home/templates/home/help.html:7
+msgid "Score -> Basic scoring: Add a new score, view all your scores"
+msgstr ""
+
+#: home/templates/home/help.html:8
+msgid ""
+"Ranking: Show all available players and their statistics, click on one "
+"player to view all his scores"
+msgstr ""
+
+#: home/templates/home/welcome.html:4 templates/index.html:34
 msgid "Welcome"
 msgstr ""
 
-#: darts/home/templates/home/welcome.html:7
+#: home/templates/home/welcome.html:7
 msgid "Welcome to darts"
 msgstr ""
 
-#: darts/home/templates/home/welcome.html:8
+#: home/templates/home/welcome.html:8
 msgid "Hello everyone to this app."
 msgstr ""
 
-#: darts/home/templates/home/welcome.html:9
+#: home/templates/home/welcome.html:9
 msgid "Learn more"
 msgstr ""
 
-#: darts/templates/index.html:7 darts/templates/index.html.py:23
-msgid "Darts"
-msgstr ""
-
-#: darts/templates/index.html:31 darts/templates/index.html.py:38
-msgid "Home"
-msgstr ""
-
-#: darts/templates/index.html:39
+#: ranking/templates/ranking/index.html:4 templates/index.html:48
 msgid "Ranking"
 msgstr ""
 
-#: darts/templates/index.html:45
-msgid "User"
+#: ranking/templates/ranking/index.html:10
+msgid "Player"
 msgstr ""
 
-#: darts/templates/index.html:48
+#: ranking/templates/ranking/index.html:12
+msgid "Descending total score"
+msgstr ""
+
+#: ranking/templates/ranking/index.html:13
+msgid "Ascending total score"
+msgstr ""
+
+#: ranking/templates/ranking/index.html:14 score/templates/score/index.html:6
+msgid "Total score"
+msgstr ""
+
+#: ranking/templates/ranking/index.html:17
+msgid "Descending total thrown darts"
+msgstr ""
+
+#: ranking/templates/ranking/index.html:18
+msgid "Ascending total thrown darts"
+msgstr ""
+
+#: ranking/templates/ranking/index.html:19
+msgid "Total darts amount"
+msgstr ""
+
+#: ranking/templates/ranking/index.html:22
+msgid "Descending one dart average"
+msgstr ""
+
+#: ranking/templates/ranking/index.html:23
+msgid "Ascending one dart average"
+msgstr ""
+
+#: ranking/templates/ranking/index.html:24
+msgid "Average per 1 dart"
+msgstr ""
+
+#: ranking/templates/ranking/index.html:27
+msgid "Descending three darts average"
+msgstr ""
+
+#: ranking/templates/ranking/index.html:28
+msgid "Ascending three darts average"
+msgstr ""
+
+#: ranking/templates/ranking/index.html:29
+msgid "Average per 3 darts"
+msgstr ""
+
+#: ranking/templates/ranking/show_profile.html:4
+msgid "Show profile"
+msgstr ""
+
+#: score/templates/score/basic_scoring.html:4
+msgid "Basic Scoring"
+msgstr ""
+
+#: score/templates/score/basic_scoring.html:11
+msgid "Points"
+msgstr ""
+
+#: score/templates/score/basic_scoring.html:15
+msgid "Darts thrown"
+msgstr ""
+
+#: score/templates/score/basic_scoring.html:19
+msgid "Save points"
+msgstr ""
+
+#: score/templates/score/index.html:4 templates/index.html:41
+#: templates/index.html.py:44
+msgid "Score"
+msgstr ""
+
+#: score/templates/score/index.html:7
+msgid "Total darts thrown"
+msgstr ""
+
+#: score/templates/score/index.html:8
+msgid "One dart average"
+msgstr ""
+
+#: score/templates/score/index.html:9
+msgid "Three dart average"
+msgstr ""
+
+#: templates/index.html:7 templates/index.html.py:23
+msgid "Darts"
+msgstr ""
+
+#: templates/index.html:31
+msgid "Home"
+msgstr ""
+
+#: templates/index.html:45
+msgid "Basic scoring"
+msgstr ""
+
+#: templates/index.html:58
 msgid "Statistics"
 msgstr ""
 
-#: darts/templates/index.html:49
+#: templates/index.html:59
 msgid "Profile"
 msgstr ""
 
-#: darts/templates/index.html:50
+#: templates/index.html:60
 msgid "Settings"
 msgstr ""
 
-#: darts/templates/index.html:52
+#: templates/index.html:62
 msgid "Logout"
+msgstr ""
+
+#: templates/index.html:66
+msgid "Sign up"
+msgstr ""
+
+#: templates/index.html:67
+#: user_management/templates/user_management/login.html:4
+#: user_management/templates/user_management/login.html:22
+msgid "Login"
+msgstr ""
+
+#: user_management/templates/user_management/login.html:11
+msgid "Please login"
+msgstr ""
+
+#: user_management/templates/user_management/login.html:17
+#: user_management/templates/user_management/register.html:22
+msgid "Username"
+msgstr ""
+
+#: user_management/templates/user_management/login.html:20
+#: user_management/templates/user_management/register.html:30
+msgid "Password"
+msgstr ""
+
+#: user_management/templates/user_management/register.html:4
+#: user_management/templates/user_management/register.html:16
+#: user_management/templates/user_management/register.html:36
+msgid "Register"
+msgstr ""
+
+#: user_management/templates/user_management/register.html:8
+msgid "You can not create an new account if you are logged in!"
+msgstr ""
+
+#: user_management/templates/user_management/register.html:26
+msgid "Email"
+msgstr ""
+
+#: user_management/templates/user_management/register.html:33
+msgid "Repeat password"
+msgstr ""
+
+#: user_management/templates/user_management/register_success.html:4
+msgid "Successfully registered"
+msgstr ""
+
+#: user_management/templates/user_management/register_success.html:8
+msgid "Thank you"
+msgstr ""
+
+#: user_management/templates/user_management/register_success.html:8
+msgid "for register!"
+msgstr ""
+
+#: user_management/templates/user_management/register_success.html:8
+msgid "Please confirm the link, which is sent to you via email."
+msgstr ""
+
+#: user_management/templates/user_management/register_success.html:9
+msgid "Then we can finish the registration and you can start playing darts!"
+msgstr ""
+
+#: user_management/views.py:59
+msgid "The username already exists."
+msgstr ""
+
+#: user_management/views.py:66
+msgid "The username is not correct."
+msgstr ""
+
+#: user_management/views.py:72
+msgid "The email is not valid."
+msgstr ""
+
+#: user_management/views.py:79
+msgid "The passwords do not match."
 msgstr ""
